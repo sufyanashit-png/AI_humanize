@@ -1,0 +1,13 @@
+{
+  "buildCommand": "pip install -r requirements.txt",
+  "outputDirectory": "api",
+  "devCommand": "uvicorn api.index:app --reload",
+  "installCommand": "pip install -r requirements.txt",
+  "framework": "fastapi",
+  "regions": ["iad1"],
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 30
+    }
+  }
+}
