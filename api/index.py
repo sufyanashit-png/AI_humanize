@@ -11,13 +11,16 @@ import os
 
 load_dotenv()
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TEMPLATES_DIR = os.path.join(os.path.dirname(BASE_DIR), "templates")
+
 app = FastAPI(
     title="HumanizeAI",
     description="AI Content Humanizer API",
     version="1.0.0"
 )
 
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory=TEMPLATES_DIR)
 
 llm = ChatGroq(
     model="llama-3.3-70b-versatile",
