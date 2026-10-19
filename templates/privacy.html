@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — HumanizeAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #1a9e74;
+      --green-light: #e6f7f2;
+      --green-dark: #0d7a58;
+      --text: #1a1a1a;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #fafaf9;
+      --white: #ffffff;
+      --radius: 10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 15px;
+    }
+    .logo-mark {
+      width: 30px; height: 30px;
+      background: var(--green);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-mark svg { width: 16px; height: 16px; }
+    .nav-links { display: flex; gap: 6px; }
+    .nav-link {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 5px 12px;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-link:hover { background: var(--green-light); color: var(--green-dark); }
+    .nav-link.active { background: var(--green-light); color: var(--green); font-weight: 500; }
+
+    /* HERO */
+    .hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 2rem 48px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 0.03em;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* LAYOUT */
+    .layout {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 2rem 80px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* SIDEBAR TOC */
+    .toc {
+      position: sticky;
+      top: 72px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .toc-title {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+    .toc ol { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .toc li a {
+      display: block;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 5px 8px;
+      border-radius: 6px;
+      transition: background 0.12s, color 0.12s;
+      line-height: 1.4;
+    }
+    .toc li a:hover { background: var(--green-light); color: var(--green-dark); }
+
+    /* CONTENT */
+    .content { min-width: 0; }
+
+    .notice {
+      background: var(--green-light);
+      border-left: 3px solid var(--green);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 14px 18px;
+      margin-bottom: 40px;
+      font-size: 14px;
+      color: #0d5c43;
+    }
+
+    .section { margin-bottom: 44px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-num {
+      width: 28px; height: 28px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .section p {
+      font-size: 14.5px;
+      color: #374151;
+      margin-bottom: 12px;
+      line-height: 1.8;
+    }
+    .section ul {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .section ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14.5px;
+      color: #374151;
+      line-height: 1.7;
+    }
+    .section ul li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Data table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 12px;
+      font-size: 13.5px;
+    }
+    .data-table th {
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-weight: 500;
+      text-align: left;
+      padding: 9px 14px;
+      border-bottom: 1px solid #b6e8d8;
+    }
+    .data-table th:first-child { border-radius: 8px 0 0 0; }
+    .data-table th:last-child  { border-radius: 0 8px 0 0; }
+    .data-table td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #374151;
+      vertical-align: top;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: #fafaf9; }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .right-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .right-card .right-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .right-card .right-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .contact-box {
+      margin-top: 16px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .contact-icon {
+      width: 36px; height: 36px;
+      background: var(--green-light);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 18px; height: 18px; stroke: var(--green); }
+    .contact-box p { margin: 0; font-size: 13px; color: var(--text-muted); }
+    .contact-box a { color: var(--green); text-decoration: none; font-weight: 500; font-size: 14px; display: block; }
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 28px 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--green); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-links { display: flex; gap: 20px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 720px) {
+      .layout { grid-template-columns: 1fr; gap: 0; }
+      .toc { position: static; margin-bottom: 32px; }
+      .hero { padding: 40px 1.25rem 32px; }
+      nav { padding: 0 1.25rem; }
+      footer { flex-direction: column; align-items: flex-start; }
+      .rights-grid { grid-template-columns: 1fr; }
+      .data-table { font-size: 12.5px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="logo-mark">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 8C3 5.24 5.24 3 8 3s5 2.24 5 5-2.24 5-5 5-5-2.24-5-5z" fill="white" opacity="0.35"/>
+        <path d="M5.5 8L7.5 10L10.5 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    HumanizeAI
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="terms.html">Terms</a>
+    <a class="nav-link active" href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L10 3h4v4l1.5 2L14 11v4h-4l-2 1.5L6 15H2v-4L.5 9 2 7V3h4L8 1.5z" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M6 8l1.5 1.5L10 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Privacy Document
+  </div>
+  <h1>Privacy Policy</h1>
+  <div class="hero-meta">
+    <span>
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M5 1v4M11 1v4M2 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Effective: June 1, 2025
+    </span>
+    <span>
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1v7l4 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/></svg>
+      Last updated: May 20, 2026
+    </span>
+    <span>
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><path d="M2 8h12M8 1.5C6.5 4 5.5 6 5.5 8s1 4 2.5 6.5M8 1.5C9.5 4 10.5 6 10.5 8s-1 4-2.5 6.5" stroke="currentColor" stroke-width="1.3"/></svg>
+      humanizeai.app/privacy
+    </span>
+  </div>
+</div>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside>
+    <nav class="toc" aria-label="Table of contents">
+      <p class="toc-title">Contents</p>
+      <ol>
+        <li><a href="#p1">1. Data We Collect</a></li>
+        <li><a href="#p2">2. How We Use Data</a></li>
+        <li><a href="#p3">3. Storage &amp; Security</a></li>
+        <li><a href="#p4">4. Third-Party Services</a></li>
+        <li><a href="#p5">5. Content Processing</a></li>
+        <li><a href="#p6">6. Cookies &amp; Tracking</a></li>
+        <li><a href="#p7">7. Your Rights</a></li>
+        <li><a href="#p8">8. Data Retention</a></li>
+        <li><a href="#p9">9. Children's Privacy</a></li>
+        <li><a href="#p10">10. Contact Us</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <div class="notice">
+      Your privacy matters to us. This policy explains what personal data we collect, why we collect it, how we use and protect it, and what rights you have regarding your information.
+    </div>
+
+    <section class="section" id="p1">
+      <div class="section-header">
+        <span class="section-num">1</span>
+        <h2>Data We Collect</h2>
+      </div>
+      <p>When you use HumanizeAI, we may collect the following categories of information:</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Examples</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Account data</strong></td>
+            <td>Name, email, password hash</td>
+            <td>Account management</td>
+          </tr>
+          <tr>
+            <td><strong>Usage data</strong></td>
+            <td>API calls, word counts, timestamps</td>
+            <td>Billing, rate limiting</td>
+          </tr>
+          <tr>
+            <td><strong>Technical data</strong></td>
+            <td>IP address, browser, device OS</td>
+            <td>Security, analytics</td>
+          </tr>
+          <tr>
+            <td><strong>Payment data</strong></td>
+            <td>Billing address, last 4 digits</td>
+            <td>Subscription processing</td>
+          </tr>
+          <tr>
+            <td><strong>Submitted content</strong></td>
+            <td>Text sent for humanization</td>
+            <td>Service delivery only</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>We do not collect sensitive personal data such as government IDs, biometrics, or financial account credentials. Payment card details are handled entirely by our payment processor (Stripe) and never stored on our servers.</p>
+    </section>
+
+    <section class="section" id="p2">
+      <div class="section-header">
+        <span class="section-num">2</span>
+        <h2>How We Use Data</h2>
+      </div>
+      <p>We use the data we collect for the following purposes:</p>
+      <ul>
+        <li>Delivering and operating the HumanizeAI service and API</li>
+        <li>Processing payments and managing your subscription plan</li>
+        <li>Enforcing rate limits, detecting abuse, and preventing fraud</li>
+        <li>Sending transactional emails such as receipts, alerts, and password resets</li>
+        <li>Analyzing aggregated, anonymized usage patterns to improve our platform</li>
+        <li>Complying with legal obligations and responding to lawful requests</li>
+      </ul>
+      <p>We do not sell, rent, or trade your personal data to third parties for marketing or advertising purposes.</p>
+    </section>
+
+    <section class="section" id="p3">
+      <div class="section-header">
+        <span class="section-num">3</span>
+        <h2>Storage &amp; Security</h2>
+      </div>
+      <p>Your data is stored on secure cloud infrastructure (AWS / GCP) within protected environments. We implement the following security measures:</p>
+      <ul>
+        <li>Encryption at rest using AES-256 for all stored data</li>
+        <li>Encryption in transit using TLS 1.3 for all API and web communications</li>
+        <li>Token-based authentication (JWT) with short expiry windows</li>
+        <li>Rate limiting, IP-based throttling, and input sanitization in our Python backend</li>
+        <li>Access controls restricting production data to authorized personnel only</li>
+        <li>Regular security audits and vulnerability assessments</li>
+      </ul>
+      <p>While we take all reasonable steps to protect your data, no method of internet transmission is 100% secure. We cannot guarantee absolute security but are committed to industry best practices.</p>
+    </section>
+
+    <section class="section" id="p4">
+      <div class="section-header">
+        <span class="section-num">4</span>
+        <h2>Third-Party Services</h2>
+      </div>
+      <p>We work with trusted third-party providers to operate our service. Each provider is bound by a Data Processing Agreement (DPA) and their own privacy policies:</p>
+      <ul>
+        <li><strong>Stripe</strong> — payment processing and subscription management</li>
+        <li><strong>Amazon Web Services (AWS) / Google Cloud Platform (GCP)</strong> — cloud hosting and data storage</li>
+        <li><strong>Analytics providers</strong> — aggregate, anonymized usage analysis to improve the platform</li>
+        <li><strong>Email delivery services</strong> — sending transactional and system emails</li>
+      </ul>
+      <p>We do not share personally identifiable information with any third party beyond what is strictly necessary to deliver the Service.</p>
+    </section>
+
+    <section class="section" id="p5">
+      <div class="section-header">
+        <span class="section-num">5</span>
+        <h2>Content Processing</h2>
+      </div>
+      <p>Text you submit for humanization is processed transiently through our AI pipeline to produce the transformed output. We do not permanently store your submitted content unless:</p>
+      <ul>
+        <li>You explicitly save it to your history or dashboard within the app</li>
+        <li>It is retained temporarily (maximum 7 days) for the purpose of debugging a reported error</li>
+      </ul>
+      <p>We do not use your submitted content to train, fine-tune, or improve our AI models without your explicit, informed, opt-in consent. You will always be notified before any such use occurs and will have the option to decline.</p>
+    </section>
+
+    <section class="section" id="p6">
+      <div class="section-header">
+        <span class="section-num">6</span>
+        <h2>Cookies &amp; Tracking</h2>
+      </div>
+      <p>We use cookies and similar tracking technologies on our website and dashboard. The types of cookies we use are:</p>
+      <ul>
+        <li><strong>Essential cookies</strong> — required for authentication, session management, and core functionality. These cannot be disabled.</li>
+        <li><strong>Analytics cookies</strong> — help us understand how users interact with the platform (anonymized). You may opt out via your account settings or browser preferences.</li>
+      </ul>
+      <p>We do not use advertising cookies, retargeting cookies, or cross-site tracking technologies. You can manage your cookie preferences at any time in your browser settings or our cookie settings panel.</p>
+    </section>
+
+    <section class="section" id="p7">
+      <div class="section-header">
+        <span class="section-num">7</span>
+        <h2>Your Rights</h2>
+      </div>
+      <p>Depending on your location and applicable data protection laws (including GDPR for EU/UK users and CCPA for California residents), you have the following rights:</p>
+      <div class="rights-grid">
+        <div class="right-card">
+          <div class="right-title">Access</div>
+          <div class="right-desc">Request a copy of all personal data we hold about you.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-title">Correction</div>
+          <div class="right-desc">Ask us to correct inaccurate or incomplete information.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-title">Deletion</div>
+          <div class="right-desc">Request deletion of your account and associated personal data.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-title">Portability</div>
+          <div class="right-desc">Export your data in a portable format (JSON or CSV).</div>
+        </div>
+        <div class="right-card">
+          <div class="right-title">Opt-out</div>
+          <div class="right-desc">Unsubscribe from non-essential emails and analytics.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-title">Complaint</div>
+          <div class="right-desc">Lodge a complaint with your local data protection authority.</div>
+        </div>
+      </div>
+      <p>To exercise any of these rights, email us at <a href="mailto:privacy@humanizeai.app" style="color:var(--green)">privacy@humanizeai.app</a>. We will respond within 30 days of receiving a verified request.</p>
+    </section>
+
+    <section class="section" id="p8">
+      <div class="section-header">
+        <span class="section-num">8</span>
+        <h2>Data Retention</h2>
+      </div>
+      <p>We retain your personal data only for as long as necessary for the purposes described in this policy:</p>
+      <ul>
+        <li><strong>Account data</strong> — retained while your account is active, plus 90 days after deletion to handle disputes or chargebacks</li>
+        <li><strong>Usage and log data</strong> — retained for up to 12 months for abuse prevention, then permanently deleted or anonymized</li>
+        <li><strong>Submitted content</strong> — not stored after processing unless saved by you; debugging copies deleted within 7 days</li>
+        <li><strong>Payment records</strong> — retained for 7 years as required by financial regulations</li>
+      </ul>
+      <p>After the applicable retention period, data is securely and permanently deleted from our systems.</p>
+    </section>
+
+    <section class="section" id="p9">
+      <div class="section-header">
+        <span class="section-num">9</span>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>HumanizeAI is not directed at, and does not knowingly collect personal data from, individuals under the age of 18. If you are a parent or guardian and believe your child has submitted personal information to our Service, please contact us immediately at <a href="mailto:privacy@humanizeai.app" style="color:var(--green)">privacy@humanizeai.app</a> and we will take prompt steps to delete that information.</p>
+    </section>
+
+    <section class="section" id="p10">
+      <div class="section-header">
+        <span class="section-num">10</span>
+        <h2>Contact Us</h2>
+      </div>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal data, please reach out to our privacy team:</p>
+      <div class="contact-box">
+        <div class="contact-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2C6.68 2 4 4.24 4 7c0 1.86 1.06 3.5 2.67 4.43L6 14l3.33-1.33c.22.03.44.04.67.04 3.32 0 6-2.24 6-5s-2.68-5-6-5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <a href="mailto:privacy@humanizeai.app">privacy@humanizeai.app</a>
+          <p>Privacy Team · HumanizeAI</p>
+        </div>
+      </div>
+      <p style="margin-top:14px;font-size:13.5px;color:var(--text-muted)">We are committed to resolving any privacy concerns promptly and transparently. You may also contact your local data protection authority if you feel your rights have not been respected.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <span>© 2025–2026 HumanizeAI. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="terms.html">Terms &amp; Conditions</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="mailto:support@humanizeai.app">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

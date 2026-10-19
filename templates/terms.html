@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions — HumanizeAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #1a9e74;
+      --green-light: #e6f7f2;
+      --green-dark: #0d7a58;
+      --text: #1a1a1a;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #fafaf9;
+      --white: #ffffff;
+      --radius: 10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 15px;
+    }
+    .logo-mark {
+      width: 30px; height: 30px;
+      background: var(--green);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-mark svg { width: 16px; height: 16px; }
+    .nav-links { display: flex; gap: 6px; }
+    .nav-link {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 5px 12px;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-link:hover { background: var(--green-light); color: var(--green-dark); }
+    .nav-link.active { background: var(--green-light); color: var(--green); font-weight: 500; }
+
+    /* HERO */
+    .hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 2rem 48px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 0.03em;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* LAYOUT */
+    .layout {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 2rem 80px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* SIDEBAR TOC */
+    .toc {
+      position: sticky;
+      top: 72px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .toc-title {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+    .toc ol { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .toc li a {
+      display: block;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 5px 8px;
+      border-radius: 6px;
+      transition: background 0.12s, color 0.12s;
+      line-height: 1.4;
+    }
+    .toc li a:hover { background: var(--green-light); color: var(--green-dark); }
+
+    /* CONTENT */
+    .content { min-width: 0; }
+
+    .notice {
+      background: var(--green-light);
+      border-left: 3px solid var(--green);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 14px 18px;
+      margin-bottom: 40px;
+      font-size: 14px;
+      color: #0d5c43;
+    }
+
+    .section { margin-bottom: 44px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-num {
+      width: 28px; height: 28px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .section p {
+      font-size: 14.5px;
+      color: #374151;
+      margin-bottom: 12px;
+      line-height: 1.8;
+    }
+    .section ul {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .section ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14.5px;
+      color: #374151;
+      line-height: 1.7;
+    }
+    .section ul li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    .contact-box {
+      margin-top: 16px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .contact-icon {
+      width: 36px; height: 36px;
+      background: var(--green-light);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 18px; height: 18px; stroke: var(--green); }
+    .contact-box p { margin: 0; font-size: 13px; color: var(--text-muted); }
+    .contact-box a { color: var(--green); text-decoration: none; font-weight: 500; font-size: 14px; display: block; }
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 28px 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--green); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-links { display: flex; gap: 20px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 720px) {
+      .layout { grid-template-columns: 1fr; gap: 0; }
+      .toc { position: static; margin-bottom: 32px; }
+      .hero { padding: 40px 1.25rem 32px; }
+      nav { padding: 0 1.25rem; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="logo-mark">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 8C3 5.24 5.24 3 8 3s5 2.24 5 5-2.24 5-5 5-5-2.24-5-5z" fill="white" opacity="0.35"/>
+        <path d="M5.5 8L7.5 10L10.5 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    HumanizeAI
+  </a>
+  <div class="nav-links">
+    <a class="nav-link active" href="terms.html">Terms</a>
+    <a class="nav-link" href="privacy.html">Privacy</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">
+    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1L10 6H15L11 9.5L12.5 15L8 12L3.5 15L5 9.5L1 6H6L8 1Z" fill="currentColor"/></svg>
+    Legal Document
+  </div>
+  <h1>Terms &amp; Conditions</h1>
+  <div class="hero-meta">
+    <span>
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M5 1v4M11 1v4M2 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Effective: June 1, 2025
+    </span>
+    <span>
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1v7l4 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/></svg>
+      Last updated: May 20, 2026
+    </span>
+    <span>
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><path d="M2 8h12M8 1.5C6.5 4 5.5 6 5.5 8s1 4 2.5 6.5M8 1.5C9.5 4 10.5 6 10.5 8s-1 4-2.5 6.5" stroke="currentColor" stroke-width="1.3"/></svg>
+      humanizeai.app/terms
+    </span>
+  </div>
+</div>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside>
+    <nav class="toc" aria-label="Table of contents">
+      <p class="toc-title">Contents</p>
+      <ol>
+        <li><a href="#t1">1. Acceptance of Terms</a></li>
+        <li><a href="#t2">2. Service Description</a></li>
+        <li><a href="#t3">3. Eligibility &amp; Accounts</a></li>
+        <li><a href="#t4">4. Acceptable Use</a></li>
+        <li><a href="#t5">5. Intellectual Property</a></li>
+        <li><a href="#t6">6. API Usage</a></li>
+        <li><a href="#t7">7. Payments &amp; Subscriptions</a></li>
+        <li><a href="#t8">8. Disclaimer of Warranties</a></li>
+        <li><a href="#t9">9. Limitation of Liability</a></li>
+        <li><a href="#t10">10. Governing Law</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <div class="notice">
+      By accessing or using HumanizeAI, you agree to be bound by these Terms and Conditions. Please read them carefully before using our service.
+    </div>
+
+    <section class="section" id="t1">
+      <div class="section-header">
+        <span class="section-num">1</span>
+        <h2>Acceptance of Terms</h2>
+      </div>
+      <p>By accessing or using HumanizeAI ("Service", "we", "us", "our"), you ("User", "you") agree to be bound by these Terms and Conditions and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using this Service.</p>
+      <p>We reserve the right to update or modify these Terms at any time without prior notice. Your continued use of the Service following any changes constitutes your acceptance of the revised Terms.</p>
+    </section>
+
+    <section class="section" id="t2">
+      <div class="section-header">
+        <span class="section-num">2</span>
+        <h2>Service Description</h2>
+      </div>
+      <p>HumanizeAI is a Python-powered AI content transformation platform that rewrites AI-generated text to produce more natural, human-authored content. Our Service includes:</p>
+      <ul>
+        <li>AI content humanization and rewriting engine</li>
+        <li>REST API access for developers and businesses</li>
+        <li>Web dashboard for individual users</li>
+        <li>Batch processing and bulk transformation tools</li>
+        <li>Integrations and developer SDKs</li>
+      </ul>
+      <p>We do not guarantee that humanized content will pass all AI detection systems, as such systems are continuously evolving. Results may vary depending on the input content and detection tool used.</p>
+    </section>
+
+    <section class="section" id="t3">
+      <div class="section-header">
+        <span class="section-num">3</span>
+        <h2>Eligibility &amp; Accounts</h2>
+      </div>
+      <p>You must be at least 18 years of age to create an account and use this Service. By registering, you confirm that all information you provide is accurate, current, and complete, and you agree to keep it up to date.</p>
+      <p>You are solely responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You must notify us immediately at <a href="mailto:support@humanizeai.app" style="color:var(--green)">support@humanizeai.app</a> of any unauthorized use of your account.</p>
+      <p>We reserve the right to terminate accounts, refuse service, or cancel orders at our sole discretion.</p>
+    </section>
+
+    <section class="section" id="t4">
+      <div class="section-header">
+        <span class="section-num">4</span>
+        <h2>Acceptable Use</h2>
+      </div>
+      <p>You agree to use HumanizeAI only for lawful purposes. You must NOT use this Service to:</p>
+      <ul>
+        <li>Generate, distribute, or promote misinformation, disinformation, or deliberately false content</li>
+        <li>Submit academic, professional, or journalistic work as entirely your own in violation of institutional or ethical policies</li>
+        <li>Create spam, phishing content, fraudulent materials, or deceptive advertising</li>
+        <li>Process content that violates any applicable local, national, or international laws or third-party rights</li>
+        <li>Reverse-engineer, decompile, disassemble, or otherwise attempt to extract the source code of our platform</li>
+        <li>Abuse, circumvent, or attempt to bypass rate limits, usage quotas, or API restrictions</li>
+        <li>Use the Service for any illegal activity, including but not limited to fraud, harassment, or defamation</li>
+      </ul>
+      <p>Violation of these terms may result in immediate account suspension or termination without refund.</p>
+    </section>
+
+    <section class="section" id="t5">
+      <div class="section-header">
+        <span class="section-num">5</span>
+        <h2>Intellectual Property</h2>
+      </div>
+      <p>You retain full ownership of any content you submit to HumanizeAI. By using our Service, you grant us a limited, non-exclusive, royalty-free license to process your submitted content solely for the purpose of delivering the requested transformation service.</p>
+      <p>The HumanizeAI platform — including its source code, AI models, visual design, branding, and documentation — is our exclusive intellectual property. You may not copy, modify, distribute, sell, or lease any part of our Service without our express written permission.</p>
+    </section>
+
+    <section class="section" id="t6">
+      <div class="section-header">
+        <span class="section-num">6</span>
+        <h2>API Usage</h2>
+      </div>
+      <p>API access is subject to rate limits and usage quotas defined by your subscription plan. We reserve the right to throttle, suspend, or revoke API access in cases of abuse, unusual activity, or threat to system integrity.</p>
+      <p>You must not expose your API keys in publicly accessible code (e.g. client-side JavaScript, public GitHub repositories). You are fully responsible for all usage and charges incurred under your API credentials. Sharing API keys with unauthorized parties is strictly prohibited.</p>
+    </section>
+
+    <section class="section" id="t7">
+      <div class="section-header">
+        <span class="section-num">7</span>
+        <h2>Payments &amp; Subscriptions</h2>
+      </div>
+      <p>Paid plans are billed on a monthly or annual basis depending on the plan you select at checkout. All fees are non-refundable except where required by applicable law.</p>
+      <p>We reserve the right to change pricing at any time with at least 30 days' written notice before the start of your next billing cycle. Continued use of the Service after a price change constitutes acceptance of the new pricing.</p>
+      <p>Failure to maintain a valid payment method may result in your account being downgraded to the free tier or suspended. You are responsible for all taxes applicable to your subscription in your jurisdiction.</p>
+    </section>
+
+    <section class="section" id="t8">
+      <div class="section-header">
+        <span class="section-num">8</span>
+        <h2>Disclaimer of Warranties</h2>
+      </div>
+      <p>The Service is provided on an "as is" and "as available" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+      <p>We do not warrant that the Service will be uninterrupted, error-free, secure, or free of viruses or other harmful components. We do not warrant that any specific output will meet your requirements or achieve any particular result.</p>
+    </section>
+
+    <section class="section" id="t9">
+      <div class="section-header">
+        <span class="section-num">9</span>
+        <h2>Limitation of Liability</h2>
+      </div>
+      <p>To the fullest extent permitted by applicable law, HumanizeAI and its officers, directors, employees, agents, and partners shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of — or inability to use — the Service, even if we have been advised of the possibility of such damages.</p>
+      <p>Our total liability for any claim arising out of or related to these Terms or the Service shall not exceed the total amount you paid us in the three (3) months immediately preceding the event giving rise to such claim.</p>
+    </section>
+
+    <section class="section" id="t10">
+      <div class="section-header">
+        <span class="section-num">10</span>
+        <h2>Governing Law</h2>
+      </div>
+      <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions. Any disputes arising under these Terms shall first be attempted to be resolved through good-faith negotiation, and thereafter through binding arbitration before resorting to formal litigation.</p>
+      <p>If you have any legal questions or concerns about these Terms, please contact our legal team:</p>
+      <div class="contact-box">
+        <div class="contact-icon">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 5.5C3 4.67 3.67 4 4.5 4h11c.83 0 1.5.67 1.5 1.5v9c0 .83-.67 1.5-1.5 1.5h-11C3.67 16 3 15.33 3 14.5v-9z" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M3 6l7 5 7-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <a href="mailto:legal@humanizeai.app">legal@humanizeai.app</a>
+          <p>Legal Team · HumanizeAI</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <span>© 2025–2026 HumanizeAI. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="mailto:support@humanizeai.app">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
