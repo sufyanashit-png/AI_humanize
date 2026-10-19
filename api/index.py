@@ -12,7 +12,15 @@ import os
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-TEMPLATES_DIR = os.path.join(os.path.dirname(BASE_DIR), "templates")
+PROJECT_ROOT = os.path.dirname(BASE_DIR)
+TEMPLATES_DIR = os.path.join(PROJECT_ROOT, "templates")
+
+print(f"[DEBUG] BASE_DIR: {BASE_DIR}")
+print(f"[DEBUG] PROJECT_ROOT: {PROJECT_ROOT}")
+print(f"[DEBUG] TEMPLATES_DIR: {TEMPLATES_DIR}")
+print(f"[DEBUG] Templates exist: {os.path.exists(TEMPLATES_DIR)}")
+if os.path.exists(TEMPLATES_DIR):
+    print(f"[DEBUG] Templates contents: {os.listdir(TEMPLATES_DIR)}")
 
 app = FastAPI(
     title="HumanizeAI",
