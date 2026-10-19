@@ -8,6 +8,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
 import os
+from mangum import Mangum
 
 load_dotenv()
 
@@ -95,3 +96,5 @@ async def privacy_redirect():
     return RedirectResponse(url="/privacy", status_code=301)
 
 app.mount("/static", StaticFiles(directory="static", check_dir=False), name="static")
+
+handler = Mangum(app)
